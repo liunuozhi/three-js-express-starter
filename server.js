@@ -1,22 +1,14 @@
-const express = require("express");
-const path = require("path");
-const app = express();
+import Bundler from "parcel-bundler";
+import express from "express";
 
-app.use(express.static(__dirname + "/public"));
-app.use(
-  "/build/",
-  express.static(path.join(__dirname, "node_modules/three/build"))
-);
-app.use(
-  "/jsm/",
-  express.static(path.join(__dirname, "node_modules/three/examples/jsm"))
-);
+const bundleOptions = {};
+const entryFile = ["./src/index.html"];
+const bundler = new Bundler(entryFile, bundleOptions);
+
+const app = express();
+app.use(bundler.middleware());
 
 const port = process.env.PORT || 3000;
-app.listen(port, (err) => {
-  if (!err) {
-    console.log(`Server is running on http://localhost:${port}/`);
-  } else {
-    console.log(err);
-  }
+app.listen(port, () => {
+  console.log(`ThreeJS App listening at http://localhost:${port}`);
 });
