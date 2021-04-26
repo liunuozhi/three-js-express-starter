@@ -9,6 +9,6 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
   },
   devServer: {
-    contentBase: "./dist",
+    contentBase: "./public",
   },
 };
