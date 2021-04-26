@@ -2,12 +2,12 @@
   "name": "three-js-express-starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type": "module",
+  "private": "true",
   "scripts": {
-    "cleanup": "rm -rf .cache dist",
-    "dev": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,8 @@
     "three": "^0.128.0"
   },
   "devDependencies": {
-    "express": "^4.17.1",
-    "parcel-bundler": "^1.12.5"
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
   }
 }
