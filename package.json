@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "server": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,11 @@
     "three": "^0.128.0"
   },
   "devDependencies": {
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^5.3.1",
     "webpack": "^5.35.1",
     "webpack-cli": "^4.6.0",
+    "webpack-dev-middleware": "^4.1.0",
     "webpack-dev-server": "^3.11.2"
   }
 }
